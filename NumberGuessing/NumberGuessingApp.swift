@@ -9,9 +9,10 @@ import SwiftUI
 
 @main
 struct NumberGuessingApp: App {
+    @StateObject var viewRouter = ViewRouter()
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MotherView(viewRouter: viewRouter)
         }
     }
 }
