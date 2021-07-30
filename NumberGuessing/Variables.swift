@@ -13,3 +13,7 @@ enum Page {
 class ViewRouter: ObservableObject {
     @Published var currentPage: Page = .page1
 }
+
+class Counter: ObservableObject {
+    @Published var count: Int = 0
+}

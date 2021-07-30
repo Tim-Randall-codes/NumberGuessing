@@ -11,6 +11,9 @@ struct ContentView2: View {
     @StateObject var viewRouter: ViewRouter
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Button("Back", action:{
+            viewRouter.currentPage = .page1
+        })
     }
 }
 
