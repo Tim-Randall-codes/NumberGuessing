@@ -10,9 +10,10 @@ import SwiftUI
 @main
 struct NumberGuessingApp: App {
     @StateObject var viewRouter = ViewRouter()
+    @StateObject var guessCounter = Counter()
     var body: some Scene {
         WindowGroup {
-            MotherView(viewRouter: viewRouter)
+            MotherView(viewRouter: viewRouter, guessCounter: guessCounter)
         }
     }
 }

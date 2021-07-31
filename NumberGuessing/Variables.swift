@@ -17,3 +17,4 @@ class ViewRouter: ObservableObject {
 class Counter: ObservableObject {
     @Published var count: Int = 0
 }
+var randomNumber: Int = 0

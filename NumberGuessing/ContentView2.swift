@@ -9,16 +9,26 @@ import SwiftUI
 
 struct ContentView2: View {
     @StateObject var viewRouter: ViewRouter
+    @StateObject var guessCounter: Counter
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-        Button("Back", action:{
-            viewRouter.currentPage = .page1
-        })
+        VStack{
+            Text("You Win!")
+                .padding()
+            Text("Good job, you took \(guessCounter.count + 1) attempts!")
+                .padding()
+            Button("Play again", action:{
+                guessCounter.count = 0
+                viewRouter.currentPage = .page1
+            })
+            .padding()
+            .foregroundColor(.black)
+            .border(Color.black, width: 2)            
+        }
     }
 }
 
 struct ContentView2_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView2(viewRouter: ViewRouter())
+        ContentView2(viewRouter: ViewRouter(), guessCounter: Counter())
     }
 }
